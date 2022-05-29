@@ -1,0 +1,310 @@
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+}
+
+$colorprimario: white;
+$colorsecundario: #f77f00;
+$colorterciario: black;
+
+@mixin sizes($largo, $alto){
+    width: $largo;
+    height: $alto;
+}
+
+@mixin barra-navegacion{
+    position: absolute;
+    z-index: 1000;
+    opacity: 90%;
+    backdrop-filter: blur(30px);
+    box-shadow: 2px 2px 10px;
+}
+
+
+
+body{
+    background-color: $colorterciario;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    
+    
+    // barra de navegacion principal 
+
+    .Nav-Bar{
+        display: flex;
+        width: 100vw;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 5%;
+        @include barra-navegacion;
+        position: fixed;
+        top: 0%;
+
+        .Nav-Bar--List{
+            @include sizes(50%, 25px);
+            display: flex;  
+            justify-content: space-around;
+            margin: auto 0px;
+            
+
+            .Nav-Bar--Link{
+                list-style: none;
+                &:hover{
+                    border-bottom: 2px $colorsecundario solid;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: $colorprimario;
+                    text-align: center;
+                    padding: 5px;
+                    font-weight:600;
+                }
+            }
+        }
+
+        .Nav-Bar--Logo{
+            margin-top: 5px;
+            
+
+            img{
+                object-fit: cover;
+                width: 50px;
+                animation: rotationy 7s infinite linear;
+            }
+        }
+        
+    }
+
+    // carousel de imagenes usado en fondo
+
+    .carousel{
+        position: fixed;
+        width: 100vw;
+        z-index: 0;
+        
+        
+        .carousel-inner{
+            @include sizes(100%, 100vh);
+            object-fit: cover;
+            filter: grayscale(80%);
+
+            .carousel-item{
+                object-fit: cover;
+                height: 100vh;
+
+                img{
+                object-fit: cover;
+                height: 100vh;
+                }
+            }
+        }
+    }
+
+    // Titulo de index
+
+    .titulo-Index{
+        position: relative;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        scroll-snap-align: center;
+        
+        
+        h1{
+            font-size: 3rem;
+            color: $colorprimario;
+        }
+
+        h2{
+            font-size: 1.5rem;
+            color: $colorsecundario;
+        }
+    }
+
+    .Boton-Flecha{
+        position: absolute;
+        z-index: 1000;
+        left: 50%;
+        margin-left: -25px;
+        bottom: 100px;
+        animation: movevertical 1s infinite linear;
+        
+        img{
+            width: 50px;
+        }
+    }
+
+    .Bloque-Index{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        background-color: #0000002a;
+        backdrop-filter: blur(10px);
+        padding-bottom: 70px;
+        width: 100vw;
+        scroll-snap-align: start;
+        padding-top: 80px;
+        
+
+
+        h2{
+            color: $colorsecundario;
+            padding: 40px;
+            text-align: center;
+            width: 100%;
+            margin: 0px auto;
+
+        }
+        p, a{
+            color: white;
+            text-align: center;
+            margin: 40px auto;
+        }
+
+        a{
+            border: 1px solid white;
+            padding: 8px;
+            text-decoration: none;
+            &:hover{
+                background-color: white;
+                color: black;
+            }
+        }
+
+        .Bloque-Index-Frase{
+                margin: 0px 0px 40px;
+
+                p{
+                    margin: 0px;
+                }
+            
+
+        }
+        .Bloque-index-img{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 80%;
+            margin: 0px auto;
+            flex-wrap: wrap;
+            
+
+            img{
+                width: 350px;
+                height: 350px;
+                margin: 20px;
+                object-fit: cover;
+                filter: grayscale(75%);
+                &:hover{
+                    filter: none;
+                    transform: scale(1.2) ;
+                    transition-duration: 0.7s;
+
+                }
+                
+            }
+        }
+    
+    }
+
+
+    // Barra de navegacion footer
+
+    .Footer{
+        @include sizes(100%, 60px);
+        bottom: 0%;
+        @include barra-navegacion;
+        position: fixed;
+
+        .Footer--List{
+            list-style: none;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            margin: 10px auto;
+            padding: 10px;
+
+            .Footer--Link{
+                margin: 0px 2%;
+
+                a{
+                    text-decoration: none;
+                    color: $colorprimario;
+                    &:hover {
+                        color: $colorsecundario;
+                        img{
+                        animation: vibracion 0.5s linear infinite;
+                        }
+                    }
+                    
+                    img{
+                        object-fit: cover;
+                        width: 30px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+// Animaciones
+
+@keyframes rotationy {
+    from {
+    transform: rotatey(0deg);
+    }
+    50% {
+    transform: rotatey(0deg);
+    }
+    to {
+    transform: rotatey(359deg);
+    }
+}
+
+@keyframes vibracion {
+    from {
+    transform: rotate(-10deg);
+    }
+    50% {
+    transform: rotate(10deg);
+    }
+    to {
+    transform: rotate(-10deg);
+    }
+}
+
+@keyframes movevertical {
+    from {
+    transform: translateY(5px)
+    }
+    50% {
+    transform: translateY(15px)
+    }
+    to {
+    transform: translateY(5px)
+    }
+}
+
+}
+
+@import "_galeria.scss" ;
+@import "_galeriadefotos.scss" ;
+@import "_about.scss" ;
+@import "_contacto.scss" ;
+@import "_mediaquery.scss" ;
+
+
+
+
+
+
+
+
