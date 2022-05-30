@@ -2,78 +2,90 @@
 
     body{
 
-    
-  // carousel de imagenes usado en fondo de galeria
-
-    .carousel2{
-    display: none;
-}
-
-// menu de galeria
-
-.Menu-Polarid{
-    padding: 150px;
-    @include sizes(100%, 100%);
-    position:relative;
-
-    .Menu-Polarid--foto1, .Menu-Polarid--foto2, .Menu-Polarid--foto3{
-
-        .Menu-Polarid--Imagen{
-            @include sizes(250px, 300px);
+        // carousel de imagenes usado en fondo de galeria
+        .carousel2{
+            display: none;
         }
 
-    }
-}
+        // menu de galeria
+        .Menu-Polarid{
+            padding: 150px;
+            @include sizes(100%, 100%);
+            position:relative;
+            
+            .Menu-Polarid--foto1, .Menu-Polarid--foto2, .Menu-Polarid--foto3{
+
+                .Menu-Polarid--Imagen{
+                    @include sizes(250px, 300px);
+                }
+            }
+        }
 
 // bloque de fotos de galeria
 
-.bloque-fotos-galeria{
-    padding: 80px 0px 60px;
+        .bloque-fotos-galeria{
+            padding: 80px 0px 60px;
 
-    span{
-        margin: 0px;
+            span{
+                margin: 0px;
             
-        img{
-            @include sizes(250px, 250px);
+            img{
+                @include sizes(250px, 250px);
+            }
+
+            }
         }
 
-    }
-}
+        .Main-Contacto{
+            width: 90%;
 
-.Main-Contacto{
-    width: 90%;
+            .Main-Contacto--Form{
+                input{
+                    width: 60%;
+                }
 
-    .Main-Contacto--Form{
-
-        input{
-            width: 60%;
-        }
-
-        .Main-Contacto--Btn{
-
-            input{
-                margin-right: 0px;
-                &:first-child{
-                    margin-right: 10px;
+                .Main-Contacto--Btn{
+                    input{
+                        margin-right: 0px;
+                        &:first-child{
+                        margin-right: 10px;
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-}
-}
-
-
-
 @media only screen and (max-width: 700px){
+
 body{
+    
     .Nav-Bar{
+        .Nav-Bar--Logo{
+            img{
+                width: 35px;
+            }
+        }
 
         .Nav-Bar--List{
             width: 90%;
         }
     }
+
+    .Bloque-Index{
+        
+        .Bloque-index-img{
+            width: 100%;
+
+            img{
+                width: 180px;
+                height: 180px;
+                margin: 10px;
+            }  
+        }
+    }
+
 
     .Footer{
 
@@ -168,8 +180,6 @@ body{
             }
         }
     }
-
-
 }
 
 }

@@ -17,20 +17,24 @@ body{
             flex-direction: column;
 
             label{
-                color: $colorprimario;
+                color: $colorsecundario;
             }
 
             input{
                 @include sizes(50% , 30px)
             }
+            
+            }
 
             .Main-Contacto--Btn{
                 display: flex;
                 justify-content: end;
-
+                
                 input{
                     width: 200px;
                     margin-right: 10px;
+                    &:hover{
+                        background-color: $colorsecundario;
                 }
             }
         }
