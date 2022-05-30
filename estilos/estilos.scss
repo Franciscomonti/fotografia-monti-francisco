@@ -73,8 +73,7 @@ body{
                 width: 50px;
                 animation: rotationy 7s infinite linear;
             }
-        }
-        
+        }   
     }
 
     // carousel de imagenes usado en fondo
@@ -109,8 +108,7 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 100vw;
-        height: 100vh;
+        @include sizes(100vw, 100vh);
         scroll-snap-align: center;
         
         h1{
@@ -133,7 +131,7 @@ body{
         animation: movevertical 1s infinite linear;
         
         img{
-            width: 50px;
+            width: 50px;           
         }
     }
 
@@ -155,20 +153,20 @@ body{
             text-align: center;
             width: 100%;
             margin: 0px auto;
-
         }
+
         p, a{
-            color: white;
+            color: $colorprimario;
             text-align: center;
             margin: 40px auto;
         }
 
         a{
-            border: 1px solid white;
+            border: 1px solid $colorprimario;
             padding: 8px;
             text-decoration: none;
             &:hover{
-                background-color: white;
+                background-color: $colorprimario;
                 color: black;
             }
         }
@@ -179,9 +177,8 @@ body{
                 p{
                     margin: 0px;
                 }
-            
-
         }
+
         .Bloque-index-img{
             display: flex;
             flex-wrap: wrap;
@@ -192,8 +189,7 @@ body{
             
 
             img{
-                width: 350px;
-                height: 350px;
+                @include sizes(350px, 350px);
                 margin: 20px;
                 object-fit: cover;
                 filter: grayscale(75%);
@@ -201,12 +197,9 @@ body{
                     filter: none;
                     transform: scale(1.2) ;
                     transition-duration: 0.7s;
-
-                }
-                
+                }   
             }
-        }
-    
+        }   
     }
 
     // Barra de navegacion footer
