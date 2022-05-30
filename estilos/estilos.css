@@ -705,6 +705,22 @@ body .Main-Contacto .Main-Contacto--Btn input:hover {
   }
   body .Nav-Bar .Nav-Bar--List {
     width: 90%;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+  }
+  body .titulo-Index h1 {
+    font-size: 2rem;
+  }
+  body .titulo-Index h2 {
+    font-size: 1.2rem;
+  }
+  body .Bloque-Index h2 {
+    font-size: 1.5rem;
+  }
+  body .Bloque-Index .Bloque-Index-Frase p {
+    font-size: 0.9rem;
+    padding: 5px;
   }
   body .Bloque-Index .Bloque-index-img {
     width: 100%;

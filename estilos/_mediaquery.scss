@@ -70,11 +70,29 @@ body{
 
         .Nav-Bar--List{
             width: 90%;
+            align-self: start;
+        }
+    }
+
+    .titulo-Index{
+        h1{
+            font-size: 2rem;
+        }
+        h2{
+            font-size: 1.2rem;
         }
     }
 
     .Bloque-Index{
-        
+        h2{
+            font-size: 1.5rem;
+        }
+        .Bloque-Index-Frase{
+            p{
+                font-size: 0.9rem;
+                padding: 5px;
+            }
+        }
         .Bloque-index-img{
             width: 100%;
 
@@ -84,8 +102,8 @@ body{
                 margin: 10px;
             }  
         }
-    }
 
+    }
 
     .Footer{
 
